@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="userForms" (ngSubmit)="submit()">
+    <label>Name</label><br />
+    <input type="text" formControlName="Uname" class="forms" /><br />
+    <label>Email</label><br />
+    <input type="email" formControlName="email" class="forms" /><br />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div>
+  <table table-border="1">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let data of formValue">
+      <td>{{ data.Uname }}</td>
+      <td>{{ data.email }}</td>
+    </tr>
+  </table>
+</div>
